@@ -16,7 +16,16 @@ function render(){
   for(let i=0;i< myLibrary.length;i++){
     let book = myLibrary[i];
     let bookEl = document.createElement("div");
-    bookEl.innerHTML = `<p>${book.title}</p>`
+    bookEl.innerHTML = 
+    `
+    <div class="book-card">
+    <h3 class="title">Book title: ${book.title}</h3>
+    <h3 class="title">Book Author: ${book.author}</h3>
+    <h3 class="title">Number of pages ${book.pages}</h3>
+    <h3 class="title">Has book been read: ${book.read}</h3>
+    </div>
+
+`
     libraryEl.appendChild(bookEl);
   }
 }

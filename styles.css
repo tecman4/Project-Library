@@ -50,4 +50,11 @@
     .clear{
         min-width: 150px;
     }
+
+    .book-card{
+        border-color: black;
+        border:20px;
+        border-style: solid;
+
+    }
     

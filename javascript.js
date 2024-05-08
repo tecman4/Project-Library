@@ -25,7 +25,7 @@ function render(){
     <h3 class="author">Book Author: ${book.author}</h3>
     <h3 class="pages">Number of pages ${book.pages}</h3>
     <h3 class="read">Has book been read: ${book.read}</h3>
-    <button class="remove=btn" oneclick="removeBookFromLibrary(${i})>Remove</button>
+    <button class="remove=btn" oneclick="removeBookFromLibrary(${i})"">Remove</button>
     </div>
 `
     libraryEl.appendChild(bookEl);

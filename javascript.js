@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
 const myLibrary = [];
 
@@ -8,8 +8,13 @@ function Book(title,author,pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-
-
+}
+Book.prototype.toggleRead = function(){
+  this.read  = !this.read;
+}
+function toggleRead(index){
+  myLibrary[index].toggleRead()
+  render();
 }
 function render(){
   let libraryEl = document.querySelector("#library")
@@ -24,18 +29,18 @@ function render(){
     <h3 class="title">Book title: ${book.title}</h3>
     <h3 class="author">Book Author: ${book.author}</h3>
     <h3 class="pages">Number of pages ${book.pages}</h3>
-    <h3 class="read">Has book been read: ${book.read}</h3>
-    <button class="remove=btn" oneclick="removeBookFromLibrary(${i})"">Remove</button>
+    <button class="read-btn" onclick="toggleRead(${i})">Has book been read: ${book.read}</button>
+    <button class="remove-btn" onclick="removeBookFromLibrary(${i})">Remove</button>
     </div>
 `
     libraryEl.appendChild(bookEl);
   }
 }
-function removeBookFromLibrary(removeIndex){
-  myLibrary.spice(removeIndex,1)
+
+function removeBookFromLibrary(index){
+  console.log(index)
+  myLibrary.splice(index,1)
   render();
-
-
 }
 function addBookToLibrary() {
 
@@ -59,5 +64,5 @@ document.querySelector("#new-book-form").addEventListener("submit", function(eve
 addBookToLibrary();
 })
 
-});
+// });
 
